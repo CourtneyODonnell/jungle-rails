@@ -7,24 +7,8 @@
     </h1>
   <% end%>
   <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <span>
-    <% if product.quantity == 0 %>
-    <span class="soldout">
-      Sold Out!
-    </span>
-    <% end %>
-  </span
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-=======
     <button class="btn soldout" <%="hidden" unless product.quantity < 1%> >Sold Out!</button>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' , disabled: (true if product.quantity < 1),
->>>>>>> feature/order-details
-=======
-    <button class="btn soldout" <%="hidden" unless product.quantity < 1%> >Sold Out!</button>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' , disabled: (true if product.quantity < 1),
->>>>>>> 43df2926326d5c4897f1dba074e8e02885f852d3
     method: :post do %>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
