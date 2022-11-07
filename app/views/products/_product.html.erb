@@ -8,6 +8,7 @@
   <% end%>
 
   <div>
+<<<<<<< HEAD
     <span>
     <% if product.quantity == 0 %>
     <span class="soldout">
@@ -16,6 +17,10 @@
     <% end %>
   </span
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
+=======
+    <button class="btn soldout" <%="hidden" unless product.quantity < 1%> >Sold Out!</button>
+    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' , disabled: (true if product.quantity < 1),
+>>>>>>> feature/order-details
     method: :post do %>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
