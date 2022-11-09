@@ -12722,3 +12722,518 @@ Processing by AboutController#index as HTML
 Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 1.0ms | Allocations: 13929)
 
 
+Started GET "/" for 127.0.0.1 at 2022-11-09 15:23:53 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered collection of products/_product.html.erb [12 times] (Duration: 12.0ms | Allocations: 13945)
+  Rendered products/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 15485)
+  [1m[36mCategory Load (6.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 8.0ms | Allocations: 1651)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 27574)
+Completed 200 OK in 71ms (Views: 30.0ms | ActiveRecord: 27.5ms | Allocations: 33681)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-11-09 15:24:04 -0400
+Processing by Admin::DashboardController#show as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `show'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/dashboard/show.html.erb within layouts/application
+  Rendered admin/dashboard/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 196)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 1.8ms | Allocations: 1443)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 11568)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 2.7ms | Allocations: 14378)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 15:24:09 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 23.7ms | Allocations: 19598)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 21362)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 1.7ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 32725)
+Completed 200 OK in 48ms (Views: 37.4ms | ActiveRecord: 7.5ms | Allocations: 34880)
+
+
+Started GET "/admin/products/new" for 127.0.0.1 at 2022-11-09 15:24:37 -0400
+Processing by Admin::ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/admin/products/new.html.erb:38
+  Rendered admin/products/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3748)
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 2.0ms | Allocations: 1203)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 14660)
+Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 3.4ms | Allocations: 15784)
+
+
+Started GET "/admin/products/new" for 127.0.0.1 at 2022-11-09 15:41:10 -0400
+Processing by Admin::ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/admin/products/new.html.erb:38
+  Rendered admin/products/new.html.erb within layouts/application (Duration: 30.7ms | Allocations: 8223)
+  Rendered layouts/_top_nav.html.erb (Duration: 0.8ms | Allocations: 1490)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 19853)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 16.6ms | Allocations: 21101)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <header class="<%= current_page?(root_path) ? "hero" : "hero small" %>">
+  <section class="title">
+    <h3>Welcome to</h3>
+    <h1>The Jungle</h1>
+    <h2>Where you can find any plants!</h2>
+  </section>
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
+  <div class="container">
+    <a class="navbar-brand" href="<%= root_path %>">Jungle</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <%# <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          > %>
+            <%# Categories %>
+          <%# </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
+            <% Category.all.each do |category| %>
+            <li class="nav-item">
+              <%= link_to category.name, category, class: "nav-link" %>
+              </li>  
+            <% end %>
+          <%# </ul>
+        </li> %>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-danger"
+            href="#"
+            id="navbarDropdownAdmin"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
+            <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
+            <li><%= link_to 'Categories', [:admin, :products], class: "nav-link" >
+          </ul>
+        </li>
+        <li class="nav-item end-0">
+          <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
+          My Cart (<%= cart.size %>) <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+(function(){
+const gnr = () => {
+    const uptitle = document.querySelector("section.title h3");
+    const subtitle = document.querySelector("section.title h2");
+    const header = document.querySelector("header.hero");
+
+    uptitle.style.fontSize = "5em";
+    uptitle.style.fontWeight = 900;
+    uptitle.style.textAlign = "center";
+
+    subtitle.innerHTML =
+      "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
+  };
+  const title = document.querySelector("header.hero");
+  title.addEventListener("dblclick", gnr);
+  
+})()
+  </script>
+):
+1:    <header class="<%= current_page?(root_path) ? "hero" : "hero small" %>">
+2:      <section class="title">
+3:        <h3>Welcome to</h3>
+4:        <h1>The Jungle</h1>
+5:        <h2>Where you can find any plants!</h2>
+6:      </section>
+7:    </header>
+8:    <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
+9:      <div class="container">
+10:        <a class="navbar-brand" href="<%= root_path %>">Jungle</a>
+11:        <button
+12:          class="navbar-toggler"
+13:          type="button"
+14:          data-bs-toggle="collapse"
+15:          data-bs-target="#navbarSupportedContent"
+16:          aria-controls="navbarSupportedContent"
+17:          aria-expanded="false"
+18:          aria-label="Toggle navigation"
+19:        >
+20:          <span class="navbar-toggler-icon"></span>
+21:        </button>
+22:        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+23:          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+24:            <%# <li class="nav-item dropdown">
+25:              <a
+26:                class="nav-link dropdown-toggle"
+27:                href="#"
+28:                id="navbarDropdown"
+29:                role="button"
+30:                data-bs-toggle="dropdown"
+31:                aria-expanded="false"
+32:              > %>
+33:                <%# Categories %>
+34:              <%# </a>
+35:              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
+36:                <% Category.all.each do |category| %>
+37:                <li class="nav-item">
+38:                  <%= link_to category.name, category, class: "nav-link" %>
+39:                  </li>  
+40:                <% end %>
+41:              <%# </ul>
+42:            </li> %>
+43:          </ul>
+44:          <ul class="navbar-nav">
+45:            <li class="nav-item dropdown">
+46:              <a
+47:                class="nav-link dropdown-toggle text-danger"
+48:                href="#"
+49:                id="navbarDropdownAdmin"
+50:                role="button"
+51:                data-bs-toggle="dropdown"
+52:                aria-expanded="false"
+53:              >
+54:                Admin
+55:              </a>
+56:              <ul class="dropdown-menu dropdown-menu-dark">
+57:                <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
+58:                <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
+59:                <li><%= link_to 'Categories', [:admin, :products], class: "nav-link" >
+60:              </ul>
+61:            </li>
+62:            <li class="nav-item end-0">
+63:              <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
+64:              My Cart (<%= cart.size %>) <% end %>
+65:            </li>
+66:          </ul>
+67:        </div>
+68:      </div>
+69:    </nav>
+70:    <script>
+71:    (function(){
+72:    const gnr = () => {
+73:        const uptitle = document.querySelector("section.title h3");
+74:        const subtitle = document.querySelector("section.title h2");
+75:        const header = document.querySelector("header.hero");
+76:    
+77:        uptitle.style.fontSize = "5em";
+78:        uptitle.style.fontWeight = 900;
+79:        uptitle.style.textAlign = "center";
+80:    
+81:        subtitle.innerHTML =
+82:          "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
+83:      };
+84:      const title = document.querySelector("header.hero");
+85:      title.addEventListener("dblclick", gnr);
+86:      
+87:    })()
+88:      </script>
+  
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_top_nav.html.erb:60: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:61: unknown regexp option - l
+app/views/layouts/_top_nav.html.erb:62: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_top_nav.html.erb:90: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:14
+Started GET "/admin/products/new" for 127.0.0.1 at 2022-11-09 15:41:47 -0400
+Processing by Admin::ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/admin/products/new.html.erb:38
+  Rendered admin/products/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3769)
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 4.1ms | Allocations: 1731)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 15950)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 3.2ms | Allocations: 17286)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 15:42:01 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 29.0ms | Allocations: 19247)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 20775)
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 2.6ms | Allocations: 1273)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 31758)
+Completed 200 OK in 49ms (Views: 36.2ms | ActiveRecord: 9.7ms | Allocations: 33055)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 15:51:41 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 14.2ms | Allocations: 22925)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 28027)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 1.3ms | Allocations: 1436)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 39587)
+Completed 200 OK in 56ms (Views: 29.2ms | ActiveRecord: 17.4ms | Allocations: 47407)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 15:51:45 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (3.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 31.9ms | Allocations: 18697)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 35.1ms | Allocations: 19803)
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 2.5ms | Allocations: 1273)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 30787)
+Completed 200 OK in 50ms (Views: 38.3ms | ActiveRecord: 9.7ms | Allocations: 31457)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 16:06:23 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 11.4ms | Allocations: 23118)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 28446)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 1.7ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 40810)
+Completed 200 OK in 45ms (Views: 22.6ms | ActiveRecord: 11.4ms | Allocations: 49231)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2022-11-09 16:06:27 -0400
+Processing by Admin::ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/products/_product.html.erb:11
+  Rendered collection of admin/products/_product.html.erb [12 times] (Duration: 26.7ms | Allocations: 18700)
+  Rendered admin/products/index.html.erb within layouts/application (Duration: 30.9ms | Allocations: 19806)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:36
+  Rendered layouts/_top_nav.html.erb (Duration: 1.9ms | Allocations: 1273)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 31019)
+Completed 200 OK in 41ms (Views: 32.3ms | ActiveRecord: 7.4ms | Allocations: 31690)
+
+
