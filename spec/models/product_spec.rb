@@ -28,8 +28,6 @@ require 'rails_helper'
         @category = Category.new(name: 'test')
         @product = Product.new(name: 'test', price_cents: 1000, quantity: 1, category: nil)
         expect(@product).to_not be_valid
-      end
-   
-    
+      end    
   end
 end
